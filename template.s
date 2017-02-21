@@ -1,4 +1,5 @@
 @ STM32F107 - Assembly template
+@ Turns on GPIOD Pin 1
 
 @ Start with enabling thumb 32 mode since Cortex-M3 do not work with arm mode
 @ Unified syntax is used to enable good of the both words...
