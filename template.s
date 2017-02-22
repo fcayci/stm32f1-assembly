@@ -27,18 +27,17 @@
 	.equ     GPIOD_CRL,     0x40011400      @ PORTD control register low
 	.equ     GPIOD_ODR,     0x4001140C      @ PORTD output data (Page 172 from RM0008)
 
+.section .text
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 @ Vectors
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 @ Vector table start
-.section .vectors
 	.word    STACKINIT
 	.word    _start + 1
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 @ Main code starts from here
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-.section .text
 
 _start:
 	@ Enable GPIOD Peripheral Clock (Page 145 from RM0008)
