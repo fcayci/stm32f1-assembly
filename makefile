@@ -11,8 +11,6 @@ CFLAGS += -ffunction-sections -fdata-sections -Wl,--gc-sections
 
 LDFLAGS += -nostartfiles -T$(LINKER_SCRIPT)
 
-UNAME := $(shell uname -s)
-
 CROSS_COMPILE = arm-none-eabi-
 CC = $(CROSS_COMPILE)gcc
 LD = $(CROSS_COMPILE)ld
@@ -48,8 +46,8 @@ $(TARGET).elf: $(OBJS)
 size: $(TARGET).elf
 	@$(SIZE) $(TARGET).elf
 
-burn: build
-	st-flash write $(TARGET).bin 0x8000000
+burn:
+	@st-flash write $(TARGET).bin 0x8000000
 
 clean:
 	@echo "Cleaning..."
@@ -60,4 +58,4 @@ clean:
 	@rm -f $(TARGET).lst
 	@rm -f $(TARGET).o
 
-.PHONY: all build size clean install
+.PHONY: all build size clean burn 
