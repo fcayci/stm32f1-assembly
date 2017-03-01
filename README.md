@@ -11,6 +11,19 @@ Tested on EasyMx Pro v7 board with STM32F107 chip.
 
 # Compile
 * Browse into the directory and run `make` to compile.
+```
+Cleaning...
+Building template.s
+   text	   data	    bss	    dec	    hex	filename
+     48	      0	      0	     48	     30	template.elf
+Successfully finished...
+```
 
 # Program
 * Run `make burn` to program the chip.
+```
+...
+...
+Flash written and verified! jolly good!
+```
+* Sometimes you might need to burn twice to get it working.
